@@ -11,7 +11,18 @@ async def paimon(message):
     print(message.content)
     if message.content == '!非常食':
         await message.channel.send('おいっ！オイラは非常食じゃないぞ！')
+import discord
+from discord.ext import commands
 
+bot = commands.Bot(
+    command_prefix="!a"
+)
+
+presence = discord.Game("非常食") # 非常食をプレイ中
+
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=presence)
 
 # チャンネル入退室時の通知処理
 @bot.event
