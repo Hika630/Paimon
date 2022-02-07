@@ -37,10 +37,10 @@ async def on_voice_state_update(member, before, after):
 
         # 退室通知
         if before.channel is not None and before.channel.id in announceChannelIds:
-            await botRoom.send("" + before.channel.name + " から" + member.name + "  が抜けました")
+            await botRoom.send("" + <#before.channel.name> + " から" + member.name + "  が抜けました")
         # 入室通知
         if after.channel is not None and after.channel.id in announceChannelIds:
-            await botRoom.send("" + after.channel.name + " に" + member.name + "  が参加しました")
+            await botRoom.send("" + <#after.channel.name> + " に" + member.name + "  が参加しました")
 
 
 # Botのトークンを指定
