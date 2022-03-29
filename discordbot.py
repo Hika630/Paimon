@@ -12,8 +12,13 @@ async def paimon(message):
     if message.content == '.非常食':
         await message.channel.send('おいっ！オイラは非常食じゃないぞ！')
 
+    if message.content == '.えへっ':
+        await message.channel.send('エヘってなんだよ！')
 
-
+presence = discord.Game("非常食") # プレイ中
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=presence)
 
 
 # チャンネル入退室時の通知処理
@@ -38,4 +43,3 @@ async def on_voice_state_update(member, before, after):
 # Botのトークンを指定
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run('OTAyNDgxMjk5NTI3MzE1NDU3.YXfDNQ.9HOLDFB-B5wJFmlbt6ysh15VgjE')
-
