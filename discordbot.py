@@ -16,11 +16,6 @@ async def paimon(message):
         await message.channel.send('エヘってなんだよ！')
 
 
-@bot.event
-presence = discord.Game("非常食") # プレイ中
-async def on_ready():
-    await bot.change_presence(activity=presence)
-
 
 # チャンネル入退室時の通知処理
 @bot.event
