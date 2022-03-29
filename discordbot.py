@@ -15,8 +15,9 @@ async def paimon(message):
     if message.content == '.えへっ':
         await message.channel.send('エヘってなんだよ！')
 
-presence = discord.Game("非常食") # プレイ中
+
 @bot.event
+presence = discord.Game("非常食") # プレイ中
 async def on_ready():
     await bot.change_presence(activity=presence)
 
