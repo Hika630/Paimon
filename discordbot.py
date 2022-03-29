@@ -3,26 +3,18 @@ from os import getenv
 import traceback
 import discord
 
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='.')
 
 
 @bot.listen('on_message')
 async def paimon(message):
     print(message.content)
-    if message.content == '!非常食':
+    if message.content == '.非常食':
         await message.channel.send('おいっ！オイラは非常食じゃないぞ！')
-import discord
-from discord.ext import commands
 
-bot = commands.Bot(
-    command_prefix="!a"
-)
+    if message.content == '.えへっ':
+        await message.channel.send('エヘってなんだよ！')
 
-presence = discord.Game("非常食") # 非常食をプレイ中
-
-@bot.event
-async def on_ready():
-    await bot.change_presence(activity=presence)
 
 # チャンネル入退室時の通知処理
 @bot.event
@@ -33,7 +25,7 @@ async def on_voice_state_update(member, before, after):
         botRoom = bot.get_channel(873950453866582077)
 
         # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
-        announceChannelIds = [873947334059380808, 873949310004391947,873949339523891290]
+        announceChannelIds = [873947334059380808]
 
         # 退室通知
         if before.channel is not None and before.channel.id in announceChannelIds:
