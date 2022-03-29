@@ -18,7 +18,8 @@ async def paimon(message):
 presence = discord.Game("非常食") # プレイ中
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=presence)        
+    await bot.change_presence(activity=presence)
+
 
 # チャンネル入退室時の通知処理
 @bot.event
@@ -42,3 +43,4 @@ async def on_voice_state_update(member, before, after):
 # Botのトークンを指定
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run('OTAyNDgxMjk5NTI3MzE1NDU3.YXfDNQ.9HOLDFB-B5wJFmlbt6ysh15VgjE')
+
