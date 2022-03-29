@@ -12,8 +12,7 @@ async def paimon(message):
     if message.content == '.非常食':
         await message.channel.send('おいっ！オイラは非常食じゃないぞ！')
 
-    if message.content == '.えへっ':
-        await message.channel.send('エヘってなんだよ！')
+
 
 
 
