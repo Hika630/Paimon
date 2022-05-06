@@ -14,6 +14,9 @@ async def paimon(message):
     if message.content == '.えへっ':
         await message.channel.send('エヘってなんだよ！')
 
+    if message.content == '.loud':
+        await message.channel.send('うるさい。')
+
 
 presence = discord.Game("非常食")  # プレイ中
 
