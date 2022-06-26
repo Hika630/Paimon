@@ -1,24 +1,36 @@
 from discord.ext import commands
 from os import getenv
+import traceback
 import discord
 
-bot = commands.Bot(command_prefix='.')
 
+import asyncio
+bot = commands.Bot(command_prefix='.')
 
 @bot.listen('on_message')
 async def paimon(message):
     print(message.content)
+    if message.content == '.シャンハイ':
+        await message.channel.send('<:emoji_22:990543009735127090> <:emoji_10:990229561918754816> <:emoji_11:990229695301820427>')
+
+    if message.content == '.チー':
+        await message.channel.send('キレそう')
+
+    if message.content == '.チー牛':
+        await message.channel.send('<:emoji_13:990229855067054101> <:emoji_10:990229561918754816> <:emoji_11:990229695301820427> <:emoji_12:990229756643540992>')
+
+    if message.content == '.からしな1':
+        await message.channel.send('朝だーーーーーーーーーーーー！！！！！プロジェクト炎上、睡眠時間は返上、生活リズムは無事変調、胃酸が逆上、食道に炎症、太田胃酸を飲みましょう　ねます')
+
+    if message.content == '.からしな2':
+        await message.channel.send('ふとんがwwwふっとんだwwwwwwww')
+
     if message.content == '.非常食':
-        await message.channel.send('おいっ！オイラは非常食じゃないぞ！')
-
-    if message.content == '.えへっ':
-        await message.channel.send('エヘってなんだよ！')
-
-    if message.content == '.通知':
-        await message.channel.send('うるさい。')
+        await message.channel.send('オイラは非常食じゃないぞ!!!')
 
 
-presence = discord.Game("非常食")  # プレイ中
+
+presence = discord.Game("Apex Legends")  # プレイ中
 
 
 @bot.event
