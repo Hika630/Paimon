@@ -10,7 +10,6 @@ bot = commands.Bot(command_prefix='.')
 @bot.listen('on_message')
 async def paimon(message):
     print(message.content)
-    
     if message.content == '.シャンハイ':
         await message.channel.send('<:emoji_22:990543009735127090> <:emoji_10:990229561918754816> <:emoji_11:990229695301820427>')
 
@@ -28,8 +27,7 @@ async def paimon(message):
 
 
 
-
-presence = discord.Game('Apex Legends')  # プレイ中
+presence = discord.Game("Apex Legends")  # プレイ中
 
 
 @bot.event
@@ -40,11 +38,12 @@ async def on_ready():
 # チャンネル入退室時の通知処理
 @bot.event
 async def on_voice_state_update(member, before, after):
-    
+    # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
     if before.channel != after.channel:
-        
+        # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
         botRoom = bot.get_channel(873950453866582077)
 
+        # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
         announceChannelIds = [873947334059380808]
 
         # 退室通知
