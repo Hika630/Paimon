@@ -26,12 +26,10 @@ async def paimon(message):
     if message.content == '.からしな2':
         await message.channel.send('ふとんがwwwふっとんだwwwwwwww')
 
-    if message.content == '.非常食':
-        await message.channel.send('オイラは非常食じゃないぞ!!!')
 
 
 
-presence = discord.Game("Apex Legends")  # プレイ中
+presence = discord.Game('Apex Legends')  # プレイ中
 
 
 @bot.event
@@ -42,12 +40,11 @@ async def on_ready():
 # チャンネル入退室時の通知処理
 @bot.event
 async def on_voice_state_update(member, before, after):
-    # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
+    
     if before.channel != after.channel:
-        # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
+        
         botRoom = bot.get_channel(873950453866582077)
 
-        # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
         announceChannelIds = [873947334059380808]
 
         # 退室通知
