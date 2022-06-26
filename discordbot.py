@@ -1,10 +1,7 @@
 from discord.ext import commands
-from os import getenv
 import traceback
 import discord
 
-
-import asyncio
 bot = commands.Bot(command_prefix='.')
 
 @bot.listen('on_message')
@@ -25,15 +22,11 @@ async def paimon(message):
     if message.content == '.からしな2':
         await message.channel.send('ふとんがwwwふっとんだwwwwwwww')
 
-
-
 presence = discord.Game("Apex Legends")  # プレイ中
-
 
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=presence)
-
 
 # チャンネル入退室時の通知処理
 @bot.event
@@ -52,7 +45,6 @@ async def on_voice_state_update(member, before, after):
         # 入室通知
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("<#" + str(after.channel.id) + "> に" + member.name + "  が参加しました")
-
 
 # Botのトークンを指定
 token = getenv('DISCORD_BOT_TOKEN')
