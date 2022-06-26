@@ -1,5 +1,5 @@
 from discord.ext import commands
-import traceback
+from os import getenv
 import discord
 
 bot = commands.Bot(command_prefix='.')
