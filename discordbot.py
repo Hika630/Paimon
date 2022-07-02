@@ -8,7 +8,7 @@ bot = commands.Bot(command_prefix='.')
 async def paimon(message):
     print(message.content)
     if message.content == '.シャンハイ':
-        await message.channel.send('<:emoji_22:990543009735127090> <:emoji_10:990229561918754816> <:emoji_11:990229695301820427>')
+        await message.channel.send('<:emoji_22:990543009735127090> <:emoji_36:992655220188381226> <:emoji_35:992655130342207488>')
 
     if message.content == '.チー':
         await message.channel.send('キレそう')
