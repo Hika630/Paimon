@@ -1,10 +1,7 @@
 from discord.ext import commands
 from os import getenv
-import traceback
 import discord
 
-
-import asyncio
 bot = commands.Bot(command_prefix='.')
 
 @bot.listen('on_message')
@@ -28,11 +25,7 @@ async def paimon(message):
     if message.content == '.眠井':
         await message.channel.send('チー牛殺す')
 
-
-
-
-
-presence = discord.Game("Apex Legends")  # プレイ中
+        presence = discord.Game("Apex Legends") #プレイ中
 
 
 @bot.event
