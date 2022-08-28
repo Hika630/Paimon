@@ -1,10 +1,8 @@
 from discord.ext import commands
 from os import getenv
-import traceback
 import discord
 
 
-import asyncio
 bot = commands.Bot(command_prefix='.')
 
 @bot.listen('on_message')
