@@ -47,10 +47,8 @@ async def on_voice_state_update(member, before, after):
     if before.channel != after.channel:
         # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
         botRoom = bot.get_channel(873950453866582077)
-
         # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
         announceChannelIds0 = [873947334059380808]
-
         # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
         announceChannelIds1 = [1012932369822515310]
 
