@@ -29,9 +29,6 @@ async def paimon(message):
         await message.channel.send('チー牛殺す')
 
 
-
-
-
 presence = discord.Game("Apex Legends")  # プレイ中
 
 
