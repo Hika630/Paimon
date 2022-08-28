@@ -1,7 +1,10 @@
 from discord.ext import commands
 from os import getenv
+import traceback
 import discord
 
+
+import asyncio
 bot = commands.Bot(command_prefix='.')
 
 @bot.listen('on_message')
@@ -22,11 +25,20 @@ async def paimon(message):
     if message.content == '.からしな2':
         await message.channel.send('ふとんがwwwふっとんだwwwwwwww')
 
+    if message.content == '.眠井':
+        await message.channel.send('チー牛殺す')
+
+
+
+
+
 presence = discord.Game("Apex Legends")  # プレイ中
+
 
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=presence)
+
 
 # チャンネル入退室時の通知処理
 @bot.event
@@ -37,14 +49,21 @@ async def on_voice_state_update(member, before, after):
         botRoom = bot.get_channel(873950453866582077)
 
         # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
-        announceChannelIds = [873947334059380808]
+        announceChannelIds0 = [873947334059380808]
+
+        # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
+        announceChannelIds1 = [1012932369822515310]
 
         # 退室通知
-        if before.channel is not None and before.channel.id in announceChannelIds:
+        if before.channel is not None and before.channel.id in announceChannelIds0:
             await botRoom.send("<#" + str(before.channel.id) + "> から" + member.name + "  が抜けました")
         # 入室通知
-        if after.channel is not None and after.channel.id in announceChannelIds:
+        if after.channel is not None and after.channel.id in announceChannelIds0:
             await botRoom.send("<#" + str(after.channel.id) + "> に" + member.name + "  が参加しました")
+        # 入室通知
+        if after.channel is not None and after.channel.id in announceChannelIds1:
+            await botRoom.send(member.name + "が" + "シベリア送りになりました")
+
 
 # Botのトークンを指定
 token = getenv('DISCORD_BOT_TOKEN')
